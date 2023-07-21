@@ -1,6 +1,8 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
 vim.cmd[[packadd packer.nvim]]
+-- If neovim is giving problems; comment this line, source the file, run
+-- :PackerSync and then uncomment and source file again.
 vim.cmd[[colorscheme nord]]
 
 return require('packer').startup(function(use)
