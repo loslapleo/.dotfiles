@@ -24,7 +24,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-from libqtile import bar, layout, widget
+from libqtile import bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
@@ -178,7 +178,7 @@ def get_bar():
            fontsize = 12,
            unfocused_border = "b48ead",
            highlight_method = "block",
-           max_title_width = 128,
+           max_title_width = 256,
            title_width_method = "uniform",
            icon_size = 0,
            rounded = False,
@@ -193,7 +193,7 @@ def get_bar():
            foreground="a3be8c",
        ),
        widget.Clock(
-           format='%a %I:%M',
+           format='%Y/%m/%d %a %H:%M',
            foreground = "a3be8c",
        ),
        widget.TextBox(
@@ -224,12 +224,8 @@ def get_bar():
     ], 32, background="2e3440")
 
 screens = [
-    Screen(
-        top=get_bar()
-        ),
-    Screen(
-        top=get_bar()
-        ),
+    Screen(top=get_bar()),
+    Screen(top=get_bar()),
 ]
 
 # Drag floating layouts.
@@ -268,6 +264,11 @@ auto_minimize = True
 # When using the Wayland backend, this can be used to configure input devices.
 wl_input_rules = None
 
+@hook.subscribe.startup_once
+def autostart():
+    home = os.path.expanduser('~/.config/qtile/autostart.sh')
+    subprocess.call([home])
+
 # XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this
 # string besides java UI toolkits; you can see several discussions on the
 # mailing lists, GitHub issues, and other WM documentation that suggest setting
@@ -277,8 +278,3 @@ wl_input_rules = None
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
 wmname = "LG3D"
-
-@hook.subscribe.startup_once
-def autostart():
-    home = os.path.expanduser('~/.config/qtile/autostart.sh')
-    subprocess.call([home])
