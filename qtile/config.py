@@ -184,33 +184,9 @@ def get_bar():
            rounded = False,
        ),
        widget.Spacer(bar.STRETCH),
-       #widget.Systray(
-       #),
        widget.TextBox(
            text='|',
-           foreground="8fbcbb",
-       ),
-       widget.TextBox(
-           text=' ',
-           foreground="8fbcbb",
-       ),
-       widget.KeyboardLayout(
-           foreground="8fbcbb",
-       ),
-       widget.TextBox(
-           text='|',
-           foreground="5e81ac",
-       ),
-       widget.TextBox(
-           text=' ',
-           foreground="ebcb8b",
-       ),
-       widget.Volume(
-           foreground="ebcb8b",
-       ),
-       widget.TextBox(
-           text='|',
-           foreground="ebcb8b",
+           foreground="a3be8c",
        ),
        widget.TextBox(
            text=' ',
@@ -219,6 +195,18 @@ def get_bar():
        widget.Clock(
            format='%a %I:%M',
            foreground = "a3be8c",
+       ),
+       widget.TextBox(
+           text='|',
+           foreground="ebcb8b",
+       ),
+       widget.TextBox(
+           text=' ',
+           foreground="ebcb8b",
+       ),
+       widget.PulseVolume(
+           foreground="ebcb8b",
+           fmt="Vol: {}"
        ),
        widget.TextBox(
            text='|',
@@ -236,8 +224,12 @@ def get_bar():
     ], 32, background="2e3440")
 
 screens = [
-    Screen(top=get_bar()),
-    Screen(top=get_bar()),
+    Screen(
+        top=get_bar()
+        ),
+    Screen(
+        top=get_bar()
+        ),
 ]
 
 # Drag floating layouts.
@@ -286,7 +278,7 @@ wl_input_rules = None
 # java that happens to be on java's whitelist.
 wmname = "LG3D"
 
-#@hook.subscribe.startup_once
-#def autostart():
-#    home = os.path.expanduser('~/.config/qtile/autostart.sh')
-#    subprocess.call([home])
+@hook.subscribe.startup_once
+def autostart():
+    home = os.path.expanduser('~/.config/qtile/autostart.sh')
+    subprocess.call([home])
