@@ -96,6 +96,11 @@ groups = [
             matches=[Match(wm_class=["code-oss"])],
             label=""
             ),
+        Group(
+            "5",
+            matches=[Match(wm_class=["Spotify"])],
+            label=""
+            ),
         ]
 
 for i in groups:
@@ -228,7 +233,7 @@ def get_bar():
            interface="wlp3s0",
            format="{essid}",
        ),
-    ], 26, background="2e3440")
+    ], 32, background="2e3440")
 
 screens = [
     Screen(top=get_bar()),
