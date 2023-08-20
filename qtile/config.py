@@ -230,8 +230,8 @@ def get_bar():
        ),
        widget.Wlan(
            foreground="bf6a6a",
-           interface="wlp3s0",
-           format="{essid}",
+           interface="wlan0",
+           format="{essid} {percent:2.0%}",
        ),
     ], 32, background="2e3440")
 
