@@ -82,26 +82,31 @@ keys = [
 groups = [
         Group(
             "1",
-            label="?"
+            label="???"
             ),
         Group(
             "2",
-            label=""
+            label="trm"
             ),
         Group(
             "3",
             matches=[Match(wm_class=["firefox"])],
-            label=""
+            label="ffx"
             ),
         Group(
             "4",
             matches=[Match(wm_class=["code-oss"])],
-            label=""
+            label="vsc"
             ),
         Group(
             "5",
+            matches=[Match(wm_class=["discord"])],
+            label="dsc"
+            ),
+        Group(
+            "6",
             matches=[Match(wm_class=["Spotify"])],
-            label=""
+            label="spt"
             ),
         ]
 
