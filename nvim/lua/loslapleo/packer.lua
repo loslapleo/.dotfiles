@@ -57,4 +57,12 @@ return require('packer').startup(function(use)
   -- Themes
   use 'shaunsingh/nord.nvim'
 
+	-- VimTex
+	use 'lervag/vimtex'
+
+	-- Autopairs
+	use {
+		"windwp/nvim-autopairs",
+		config = function() require("nvim-autopairs").setup {} end
+	}
 end)
