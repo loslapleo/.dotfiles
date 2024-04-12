@@ -11,7 +11,7 @@ return require('packer').startup(function(use)
 
   -- Telescope
   use {
-	'nvim-telescope/telescope.nvim', tag = '0.1.1',
+	'nvim-telescope/telescope.nvim', tag = '0.1.4',
 	-- or                            , branch = '0.1.x',
 	requires = { {'nvim-lua/plenary.nvim'} }
   }
@@ -65,4 +65,7 @@ return require('packer').startup(function(use)
 		"windwp/nvim-autopairs",
 		config = function() require("nvim-autopairs").setup {} end
 	}
+
+	-- Indent lines
+	use 'lukas-reineke/indent-blankline.nvim'
 end)
