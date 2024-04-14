@@ -1,6 +1,6 @@
 # .dotfiles
 
-This repo holds all my dotfiles.
+This repo holds all my dotfiles. >.<
 
 # Usage
 
