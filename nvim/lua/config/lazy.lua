@@ -20,6 +20,7 @@ vim.opt.rtp:prepend(lazypath)
 -- This is also a good place to setup other settings (vim.opt)
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
+
 vim.opt.nu = true
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
@@ -28,6 +29,8 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.wrap = true
 vim.opt.colorcolumn = "80"
+
+vim.keymap.set("n", "<leader>b", vim.cmd.Ex)
 
 -- Setup lazy.nvim
 require("lazy").setup({
