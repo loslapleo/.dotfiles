@@ -1,26 +1,17 @@
 # .dotfiles
 
-This repo holds all my dotfiles. >.<
+This repo holds all my dotfiles.
 
-# Usage
+## Usage
 
-## All dotfiles
+You can select which dotfiles should be applied by using the following command in the root of the `.dotfiles/` directory:
 
-This is for when you want to add all directories to your ".config". This is
-usually used for when you haven't set anything up yet.
+```
+bash setup.sh
+```
 
-Run this in the ".dotfiles" directory:
+By default, the `.config/` and `.dotfiles/` directories are expected to be in the user profile directory. In other words, the default config and dotfiles directories are `~/.config/` and `~/.dotfiles/` respectively. If this is not the case for you use the first two arguments of the `setup.sh` bash script to set the correct config and dotfiles directories.
 
-`sh setup.sh`
-
-## Single dotfile
-
-Run this in the ".dotfiles" directory:
-
-`ln -s ~/.dotfiles/<dir>/ ~/.config/`
-
-Where `<dir>` is replaced by the directory name of the config you want to add to
-your machine.
-
->**NOTE:** Some dotfiles need multiple commands to work as intended. Check the
-"setup.sh" file to make sure no extra commands are necessary.
+```
+bash setup.sh <config_dir> <dotfiles_dir>
+```
