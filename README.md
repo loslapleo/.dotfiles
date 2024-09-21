@@ -10,7 +10,7 @@ You can select which dotfiles should be applied by using the following command i
 bash setup.sh
 ```
 
-By default, the `.config/` and `.dotfiles/` directories are expected to be in the user profile directory. In other words, the default config and dotfiles directories are `~/.config/` and `~/.dotfiles/` respectively. If this is not the case for you use the first two arguments of the `setup.sh` bash script to set the correct config and dotfiles directories.
+By default, the `.config/` and `.dotfiles/` directories are expected to be in the user profile directory. In other words, the default config and dotfiles directories are `~/.config/` and `~/.dotfiles/` respectively. If this is not the case for you, use the first two arguments of the `setup.sh` bash script to set the correct config and dotfiles directories:
 
 ```
 bash setup.sh <config_dir> <dotfiles_dir>
